@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INOV CUSTOMS | Gaming Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Oxanium', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        .title-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+        .neon-text {
+            text-shadow: 0 0 10px #ff4d4d, 0 0 20px #cc0000;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.25);
+        }
+        .discord-btn {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.45);
+        }
+        .discord-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.75);
+        }
+        .event-card {
+            background: linear-gradient(135deg, rgba(32, 8, 8, 0.85) 0%, rgba(8, 8, 16, 0.85) 100%);
+            border-left: 3px solid #ff4d4d;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        /* small fade-in animation used by observer (Tailwind doesn't include this class by default) */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+        .animate-fadeIn { animation: fadeIn 700ms ease forwards; }
+        /* ensure anchor links land below the fixed nav */
+        section { scroll-margin-top: 90px; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-black/80 backdrop-blur-sm fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="images/logo.webp" alt=" gaming logo" class="h-10 w-auto">
+                <span class="title-font text-xl text-red-400">INOV CUSTOMS</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-white hover:text-red-300 transition">Home</a>
+                <a href="#about" class="text-white hover:text-red-300 transition">About</a>
+                <a href="works.html" class="text-white hover:text-red-300 transition">Works</a>
+                <a href="#events" class="text-white hover:text-red-300 transition">Events</a>
+                <a href="#team" class="text-white hover:text-red-300 transition">Team</a>
+            </div>
+            <button class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-red-950 pt-20">
+        <div class="absolute inset-0 opacity-20">
+            <img src="images/back.png" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="title-font text-4xl md:text-6xl lg:text-7xl mb-6 neon-text">INOV CUSTOMS</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+                INOV CUSTOMS is a creative modding hub delivering high-quality free and premium works — vehicles, skins, maps, CLEO scripts, tools, fonts, and more. We build, design, and innovate to give the community the best custom experience.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="https://discord.gg/T7uyNFeRZv" class="discord-btn bg-red-600 hover:bg-red-500 text-white font-bold py-4 px-8 rounded-lg text-lg flex items-center justify-center gap-3">
+                    <img src="images/discord.gif" alt="Discord logo icon" class="h-8 w-auto">
+                    Join Our Discord
+                </a>
+                <a href="#about" class="bg-transparent border-2 border-red-400 hover:bg-red-900/30 text-red-400 font-bold py-4 px-8 rounded-lg text-lg transition">
+                    Learn More
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 pulse">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-red-950 to-red-900">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl md:text-4xl mb-16 text-center text-red-300">Why Join Our Community?</h2>
+            
+            <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                <!-- Feature 1 -->
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 hover:border-red-400 transition">
+                    <div class="text-red-400 text-4xl mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1bf75cf3-027f-487d-ac24-0be55520fd5a.png" class="h-16 w-auto mx-auto">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Thriving Community</h3>
+                    <p class="text-gray-300">
+                        Connect with over 200+ active gamers across all platforms and skill levels. Make new friends and find your perfect squad.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 hover:border-red-400 transition">
+                    <div class="text-red-400 text-4xl mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a56c07e3-b590-4fa9-b562-6888e1a1af50.png" class="h-16 w-auto mx-auto">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">24/7 STAFF SUPPORT</h3>
+                    <p class="text-gray-300">
+                        24/7 Admin / Staff support.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 hover:border-red-400 transition">
+                    <div class="text-red-400 text-4xl mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2be998b2-1103-4e50-afe4-a675e4d80569.png" class="h-16 w-auto mx-auto">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Toxic-Free Zone</h3>
+                    <p class="text-gray-300">
+                        Our strict moderation ensures a welcoming environment for all gamers regardless of gender, skill level, or background.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="works" class="py-20 bg-gradient-to-b from-red-900 to-red-800">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl md:text-4xl mb-16 text-center text-red-300">Our Featured Works</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Game 1 -->
+                <div class="game-card bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800 transition duration-300">
+                    <div class="relative h-48">
+                        <img src="images/CAR.png" alt="" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <h3 class="text-xl font-bold text-white">MODS FOR SA-MP</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-4">
+                            Different types of Vehicle mods for SA-MP are available in our drop section. 
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-red-900/50 text-red-300 px-3 py-1 rounded-full">FREE</span>
+                            <span class="text-xs bg-red-900/50 text-red-300 px-3 py-1 rounded-full">MODS</span>
+                            <span class="text-xs bg-red-900/50 text-red-300 px-3 py-1 rounded-full">DROP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 2 -->
+                <div class="game-card bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800 transition duration-300">
+                    <div class="relative h-48">
+                        <img src="images/MAPPING.png" alt="" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <h3 class="text-xl font-bold text-white">MAPPINGS FOR SA-MP</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-4">
+                            Different types of mappings for SA-MP free/ Custom paid mappings are available.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-red-900/50 text-red-300 px-3 py-1 rounded-full">FREE/PAID</span>
+                            <span class="text-xs bg-red-900/50 text-red-300 px-3 py-1 rounded-full">MAPPINGS</span>
+                            <span class="text-xs bg-red-900/50 text-red-300 px-3 py-1 rounded-full">DROP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 3 -->
+                <div class="game-card bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800 transition duration-300">
+                    <div class="relative h-48">
+                        <img src="images/TEXTDRAWS.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-4">
+                            <h3 class="text-xl font-bold text-white">TEXTDRAWS FOR SA-MP</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-4">
+                           Different types of textdraws like LOGIN PAGES,INGAME PHONES ETC...
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-red-900/50 text-red-300 px-3 py-1 rounded-full">FREE</span>
+                            <span class="text-xs bg-red-900/50 text-red-300 px-3 py-1 rounded-full">CUSTOM PAID</span>
+                            <span class="text-xs bg-red-900/50 text-red-300 px-3 py-1 rounded-full">DROP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="work.html" class="inline-block border-2 border-red-400 hover:bg-red-900/30 text-red-300 font-bold py-3 px-8 rounded-lg transition">
+                    View All Works
+                <img src="/images1/banner.gif" width="468" height="60">
+                </a>
+            </div>
+        </div>
+    </section>
+            
+    <!-- Events Section -->
+    <section id="events" class="py-20 bg-gradient-to-b from-red-800 to-red-700">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl md:text-4xl mb-16 text-center text-red-300">Upcoming Events</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Event 1 -->
+                <div class="event-card mb-6 p-6 rounded-lg">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-red-300">GIVEAWAY</h3>
+                            <div class="flex items-center text-gray-300 text-sm mt-1 gap-3">
+                                <span class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    DEC 12, 2025
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    ONGOING
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            
+                            <a href="https://discord.gg/KQs53TUJ" class="border border-red-400 text-red-300 hover:bg-red-900/30 px-4 py-2 rounded-md text-sm font-medium">DETAILS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+                
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gradient-to-b from-red-700 to-red-600">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl md:text-4xl mb-16 text-center text-red-300">Meet The Team</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Team Member 1 -->
+                <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-red-400">
+                        <img src="images/foden.gif" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold">FODEN</h3>
+                    <p class="text-red-300 mb-2">Founder</p>
+                    <p class="text-gray-300 text-sm">
+                        
+                    </p>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-red-400">
+                        <img src="images/michael.gif" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold">MICHAEL</h3>
+                    <p class="text-red-300 mb-2">Founder</p>
+                    <p class="text-gray-300 text-sm">
+                      
+                    </p>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-red-400">
+                        <img src="images/youtha.gif"  class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold">YOUTHA</h3>
+                    <p class="text-red-300 mb-2">Owner</p>
+                    <p class="text-gray-300 text-sm">
+                        
+                    </p>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="bg-gray-900/50 rounded-xl p-6 border border-gray-800 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-red-400">
+                        <img src="images/cros.gif" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold">CROS FORUS</h3>
+                    <p class="text-red-300 mb-2">Owner / Web Designer</p>
+                    <p class="text-gray-300 text-sm">
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord Widget -->
+    <section class="py-16 bg-red-700">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gray-900/50 rounded-xl border border-gray-800 p-8">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                        <h2 class="title-font text-2xl md:text-3xl mb-4 text-red-300">Join Our Discord Today</h2>
+                        <p class="text-gray-300 mb-6">
+                            Connect with thousands of gamers, find teammates for your favorite games, and download your free mods, textdraws, mappings etc...
+                        </p>
+                        <a href="https://discord.gg/T7uyNFeRZv" class="discord-btn bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-6 rounded-lg inline-flex items-center gap-2">
+                            <img src="images/discord.gif"  class="h-6 w-auto">
+                            JOIN NOW
+                        </a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <!-- Discord Widget Placeholder -->
+                        <div class="bg-gray-800 rounded-lg p-4 h-64 flex items-center justify-center border border-gray-700">
+                            <div class="text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-red-300 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                                <p class="text-gray-300">INOV CUSTOMS </p>
+                                <p class="text-xs text-gray-400 mt-2">(UNDER CONSTRUCTION)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between gap-8">
+                <div class="md:w-1/3">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="images/logo.webp" alt="Small Nexus Gaming logo" class="h-10 w-auto">
+                        <span class="title-font text-lg text-red-400">INOV CUSTOMS</span>
+                    </div>
+                    <p class="text-gray-400">
+                        INOV CUSTOMS is a creative modding hub delivering high-quality free and premium works — vehicles, skins, maps, CLEO scripts, tools, fonts, and more. We build, design, and innovate to give the community the best custom experience.
+                    </p>
+                </div>
+                
+                <div class="md:w-1/3">
+                    <h3 class="text-white font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-red-300 transition">Home</a></li>
+                        <li><a href="work.html" class="text-gray-400 hover:text-red-300 transition">Works</a></li>
+                        <li><a href="#events" class="text-gray-400 hover:text-red-300 transition">Events</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-red-300 transition">Team</a></li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/3">
+                    <h3 class="text-white font-bold mb-4">Connect With Us</h3>
+                    <div class="flex gap-4 mb-4">
+                       
+                        <a href="https://www.youtube.com/" class="text-gray-400 hover:text-red-300 transition">
+                            <img src="images/youtube.png" alt="YouTube logo icon" class="h-8 w-12">
+                        </a>
+                        
+                        <a href="https://www.instagram.com/" class="text-gray-400 hover:text-red-300 transition">
+                            <img src="images/instagram.png" alt="Instagram logo icon" class="h-8 w-8">
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Inov Customs. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black/90 z-50 hidden">
+        <div class="container mx-auto px-4 py-20">
+            <div class="flex justify-end mb-10">
+                <button id="closeMenu" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col items-center space-y-10">
+                <a href="#home" class="text-2xl text-white hover:text-red-300 transition">Home</a>
+                <a href="#about" class="text-2xl text-white hover:text-red-300 transition">About</a>
+                <a href="works.html" class="text-white hover:text-red-300 transition">Works</a>
+                <a href="#events" class="text-2xl text-white hover:text-red-300 transition">Events</a>
+                <a href="#team" class="text-2xl text-white hover:text-red-300 transition">Team</a>
+                <a href="h" class="mt-8 bg-red-600 hover:bg-red-500 text-white font-bold py-4 px-8 rounded-lg text-xl flex items-center gap-3">
+                    <img src="/images/discord.gif" alt="Discord logo icon" class="h-8 w-auto">
+                    Join Discord
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.querySelector('nav button');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Smooth scrolling for anchor links (handles fixed header)
+        const nav = document.querySelector('nav');
+        function getNavHeight() { return nav ? nav.offsetHeight : 80; }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    // close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                    }
+                    const navHeight = getNavHeight();
+                    const targetPos = target.getBoundingClientRect().top + window.scrollY - navHeight - 10;
+                    window.scrollTo({
+                        top: targetPos,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animation class
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
